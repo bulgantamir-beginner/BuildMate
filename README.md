@@ -14,10 +14,10 @@
    DB_PASSWORD=Your_Password
 
    GROQ_API_KEY=Your_Key_Here <- groq api key оруулах.
-   <!-- (Хэрэв GROQ API key оруулаагүй бол AI чат бот зөвлөмжийн хэсэг ажиллахгүйг анхаарна уу.) -->
+   (⚠️Анхаар: Хэрэв GROQ API key оруулаагүй бол AI чат бот зөвлөмжийн хэсэг ажиллахгүйг анхаарна уу.)
 
    ADMIN_PASSWORD=admin123
-   <!-- (admin цэсэнд хандах нэр: admin, нууц үг: admin123) -->
+   (⚠️Анхаар: admin цэсэнд хандах нэр: admin, нууц үг: admin123)
 
 5. backend folder-т
    node db/migrate.js
