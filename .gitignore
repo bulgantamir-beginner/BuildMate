@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables / Secrets
+.env
+backend/.env
+frontend/.env
+
+# Production builds
+dist/
+build/
+
+# IDE / System files
+.DS_Store
+
+README.md
