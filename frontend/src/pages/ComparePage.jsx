@@ -37,14 +37,12 @@ export default function ComparePage() {
     const b2 = saved.find((b) => b.id === sel2);
     setLoading(true);
     try {
-      // 1. Бэкэндээс ирсэн parts-ийг объект болгож хөрвүүлэх хамгаалалт
       let p1Ids = b1?.parts || {};
       let p2Ids = b2?.parts || {};
 
       if (typeof p1Ids === "string") p1Ids = JSON.parse(p1Ids);
       if (typeof p2Ids === "string") p2Ids = JSON.parse(p2Ids);
 
-      // 2. Зөвхөн цэвэр UUID-нуудыг нь ялгаж авах
       const cleanBuild1 = {};
       const cleanBuild2 = {};
 
@@ -59,7 +57,6 @@ export default function ComparePage() {
         }
       });
 
-      // 3. Бэкэнд рүү илгээх
       const res = await compareBuilds(
         cleanBuild1,
         cleanBuild2,
@@ -187,7 +184,6 @@ export default function ComparePage() {
 
       {result && (
         <div>
-          {/* Score row */}
           <div
             style={{
               display: "grid",
@@ -289,7 +285,6 @@ export default function ComparePage() {
             ))}
           </div>
 
-          {/* Parts comparison */}
           <div
             style={{
               background: "var(--bg-card)",

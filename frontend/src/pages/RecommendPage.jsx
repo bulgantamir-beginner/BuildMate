@@ -53,14 +53,12 @@ export default function RecommendPage({ navigate }) {
   const generate = async () => {
     setLoading(true);
     setRec(null);
-    setMsg(""); // Өмнөх алдааны мессежийг цэвэрлэх
+    setMsg("");
 
     try {
       const data = await getRecommendations(useCase, budget);
       setRec(data);
     } catch (err) {
-      // Backend-ээс ирсэн тусгай алдааны мессежийг барьж авах
-      // Axios-ийн хувьд алдаа нь err.response.data.message дотор байдаг
       const errorMsg =
         err.response?.data?.message ||
         "Алдаа гарлаа. Backend холболтоо шалгана уу.";
@@ -72,7 +70,7 @@ export default function RecommendPage({ navigate }) {
 
   const handleLoad = () => {
     loadBuild(rec.recommended, rec.name);
-    setMsg("Build-ийг Builder хэсэгт хуулав!");
+    setMsg("Эд ангиудыг Builder хэсэгт хуулав!");
     setTimeout(() => setMsg(""), 3000);
     if (navigate) navigate("builder");
   };
@@ -125,7 +123,7 @@ export default function RecommendPage({ navigate }) {
           marginBottom: 10,
         }}
       >
-        ХЭРЭГЛЭХ ЗОРИУЛАЛТ
+        ХЭРЭГЛЭЭНИЙ ЗОРИУЛАЛТ
       </div>
       <div
         style={{ display: "flex", gap: 10, marginBottom: 24, flexWrap: "wrap" }}
@@ -184,7 +182,7 @@ export default function RecommendPage({ navigate }) {
           marginBottom: 10,
         }}
       >
-        ТӨСӨВ
+        БОЛОМЖИТ ТӨСӨВ
       </div>
       <div
         style={{ display: "flex", gap: 8, marginBottom: 28, flexWrap: "wrap" }}
@@ -249,7 +247,6 @@ export default function RecommendPage({ navigate }) {
             overflow: "hidden",
           }}
         >
-          {/* Header */}
           <div
             style={{
               background:
@@ -295,7 +292,6 @@ export default function RecommendPage({ navigate }) {
             </div>
           </div>
 
-          {/* Parts list */}
           {Object.entries(rec.recommended || {}).map(([cat, part]) =>
             !part ? null : (
               <div
