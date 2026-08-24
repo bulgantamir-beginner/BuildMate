@@ -7,7 +7,7 @@ const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
 });
 
-const GROQ_MODEL = "llama-3.3-70b-versatile";
+const GROQ_MODEL = "openai/gpt-oss-120b";
 
 const SYSTEM_PROMPT = `You are PCBuilder AI, an expert PC building assistant embedded inside a BuildMate app. Your personality is friendly, enthusiastic, and knowledgeable.
 
